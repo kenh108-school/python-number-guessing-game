@@ -3,9 +3,13 @@ import random
 
 # Set the max for number range
 max = 10
-if len(sys.argv) == 2 and sys.argv[1].isdigit():
-    tmp_max = int(sys.argv[1])
-    max = tmp_max
+if len(sys.argv) == 2:
+    if sys.argv[1].isdigit():
+        tmp_max = int(sys.argv[1])
+        max = tmp_max
+    else:
+        print("Incorrect usage.")
+        quit()
 score = max
 
 # Choose random number
@@ -28,6 +32,6 @@ while True:
     else:
         score -= 1
         if guess_int > rand_num:
-            print("Number is lower")
+            print("Number is lower.")
         else:
-            print("Number is higher")
+            print("Number is higher.")
